@@ -26,6 +26,25 @@
     height:20vh;
     top:0;
 }
+.load-nav{
+    animation: load 1s;
+}
+.unload-nav{
+    animation: reverseload 1s;
+}
+.nav-fixed{
+    background: black;
+    position:fixed;
+    height:15vh
+}
+.nav-absolute{
+    background: none;
+    position:absolute;
+    height:20vh;
+
+}
+
+
 .navbar img{
     height:100px;
     margin-left :30px;
@@ -91,27 +110,30 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: orange;
 }
 .section-part{
-    background-color: blue;
     display: flex;
     align-items: center;
     justify-content: center;
-    width:80%
+    width:80%;
+    height:80VH
 }
 .section-part .section-left{
-    width:40%;
+    width:50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .section-part .section-right{
-    width:60%;
+    width:50%;
     display: flex;
     align-items: center;
     justify-content: center;   
 }
+.section-part .section-right p{
+    font-size:1.1rem
+}
+
 .section-inside .section-title{
     text-align: center;
     padding:10px;
