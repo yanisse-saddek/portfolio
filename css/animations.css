@@ -1,7 +1,8 @@
 @keyframes typing {
     from{width:0}
-    to{width:25%;}
+    to{width:35%;}
 }
+
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: white; }

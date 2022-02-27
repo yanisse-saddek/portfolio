@@ -150,7 +150,6 @@
     font-size: 1.5rem;
     margin: 0 auto;
     letter-spacing: .10em;
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
     border-right: .15em solid white;
     white-space: nowrap;
     overflow: hidden;
@@ -336,10 +335,17 @@
     }
     #profil .section-inside .section-part .section-right{
         width:95%;
-        background-color: orange;
-        
+        background-color: orange;   
+    }
+
+}
+
+@media (max-width: 1250px) { 
+    .sub-name{
+        animation: typing 3s steps(1000, end), blink-caret .75s step-end infinite;
     }
 }
+
 @media (max-width: 800px) {
     .right-links{
         display: none !important;
@@ -351,6 +357,9 @@
     }
     .navbar{
         background-color: black;
+    }
+    .sub-name{
+        animation:  blink-caret .75s step-end infinite;
     }
 }
 @media (max-width: 650px) {
@@ -374,4 +383,6 @@
     .box-grid{
         grid-template-columns: 1fr;
     }
+    .name{font-size: 1.5rem;}
+    .sub-name{font-size: 1rem;}
 }
