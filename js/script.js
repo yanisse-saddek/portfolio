@@ -70,7 +70,7 @@
 
 
         var listOfCards = $('.box').length
-        var listOfColors = ['red', 'black', 'orange','yellow', 'green']
+        var listOfColors = ['red', 'blue', 'green','yellow']
         for(i=0; i<listOfCards; i++){
             actualBox = $('.box')[i]
             boxValue = parseInt(actualBox.innerText)
@@ -81,8 +81,22 @@
                 strokeDashoffset: offsetValue,
                 stroke:randColor
             })
-            console.log(listOfColors)
             listOfColors.splice(randNum, 1)
         }
 
-        console.log(listOfCards)
+var active = false
+$('.hamburger').click(()=>{
+    if(active === false){
+        $('.hamburger-menu').css('display', 'flex')
+        $('.hamburger-menu').addClass('nav-load')    
+        $('.hamburger-menu').removeClass('nav-unload')     
+        active = true
+    }else{
+        $('.hamburger-menu').addClass('nav-unload')   
+        $('.hamburger-menu').removeClass('nav-load')     
+        setTimeout(()=>{
+            $('.hamburger-menu').css('display', 'none')
+        }, 1000)
+        active = false
+    }
+})

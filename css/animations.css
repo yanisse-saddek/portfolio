@@ -17,3 +17,31 @@
         margin-top: 0;
     }
 }
+
+
+@keyframes navload{
+    from{
+        margin-bottom:300px;
+        opacity:0
+    }
+    to{
+       background-color: black;
+        margin-top: 0;
+        opacity:1
+    }
+}
+
+
+
+@keyframes navunload{
+    from{
+        margin-bottom:300px;
+        opacity:1
+    }
+    to{
+        margin-top: 0;
+        opacity:0
+    }
+}
+
+
