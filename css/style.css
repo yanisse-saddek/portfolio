@@ -5,6 +5,37 @@
     font-family: 'Nunito', sans-serif;
     scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+    ::-webkit-scrollbar-track {
+    background: none;
+  }
+    ::-webkit-scrollbar-thumb {
+    background: black;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+  .navbar .right-links a:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+}
+
+.navbar .right-links a:hover::after{
+    width: 100%;
+}
+
+
+
 .main-background{
     background-image:url('https://julien-dahy.com/wp-content/uploads/2020/09/pc_background.jpg');
     background-repeat:no-repeat;
@@ -54,6 +85,7 @@
     display: flex;
     justify-content: space-between;
     margin-right:30px;
+    text-transform: uppercase;
 }
 .navbar .right-links a{
     text-decoration: none;
@@ -153,6 +185,63 @@
     margin:3rem;
     width:90%;
 }
+.box-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.box{
+    position: relative;
+    width:300px;
+    height:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.box .percent{
+    position: relative;
+    height:150PX;
+    width:150px;
+    padding-bottom:1rem;
+}
+.box .percent svg{
+    position: relative;
+    height:150PX;
+    width:150px;
+}
+.box .percent svg circle{
+    height:150PX;
+    width:150px;
+    fill:none;
+    stroke-width: 10;
+    stroke:black;
+    transform:translate(5px,5px);
+    stroke-dashoffset: 440;
+    stroke-dasharray: 440;
+}
+.box .percent svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke:rgb(177, 175, 175);
+}
+.box .percent svg circle:nth-child(2){
+    stroke:black;
+}
+
+.box .percent .number{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box .percent .number p {
+    font-size:1.7rem
+}
+
+
 .project-list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

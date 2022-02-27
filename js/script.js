@@ -68,3 +68,21 @@
         
         }).scroll();
 
+
+        var listOfCards = $('.box').length
+        var listOfColors = ['red', 'black', 'orange','yellow', 'green']
+        for(i=0; i<listOfCards; i++){
+            actualBox = $('.box')[i]
+            boxValue = parseInt(actualBox.innerText)
+            var offsetValue  = (440 - (440 * boxValue) / 100)
+            randNum = Math.floor(Math.random() * listOfColors.length)
+            randColor = listOfColors[randNum]
+            $(`#${actualBox.id} .percent svg circle:nth-child(2)`).css({
+                strokeDashoffset: offsetValue,
+                stroke:randColor
+            })
+            console.log(listOfColors)
+            listOfColors.splice(randNum, 1)
+        }
+
+        console.log(listOfCards)
