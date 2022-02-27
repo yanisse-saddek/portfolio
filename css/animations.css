@@ -9,7 +9,7 @@
 @keyframes load{
     from{
         opacity:0;
-        margin-top:100px;
+        margin-top:300px;
     }
     to{
         opacity:1;
