@@ -22,16 +22,16 @@
     align-items: center;
     justify-content: space-between;
     position: absolute;
+    z-index:999;
     width:100%;
     height:20vh;
     top:0;
 }
-.load-nav{
-    animation: load 1s;
+.load{
+    animation: load 2s;
+    display: flex;
 }
-.unload-nav{
-    animation: reverseload 1s;
-}
+
 .nav-fixed{
     background: black;
     position:fixed;
@@ -165,7 +165,7 @@
     width:100%;
 }
 .project{
-    display: flex;
+    display:none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -178,4 +178,14 @@
     padding:1rem;
     width:86%;
     text-align: center;
+}
+
+.icon-list{
+    width:90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.icon-list svg{
+    height:130px
 }
