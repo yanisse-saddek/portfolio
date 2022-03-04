@@ -37,9 +37,10 @@
 
 
 .main-background{
-    background-image:url('https://julien-dahy.com/wp-content/uploads/2020/09/pc_background.jpg');
+    background-image:url('../img/background.png');
     background-repeat:no-repeat;
     background-size: cover;
+    background-position: center;
     position: relative; 
 }
 #particles-js{
@@ -59,8 +60,8 @@
     top:0;
 }
 .hamburger{
-    height:10vh;
-    width:10vh;
+    height:5vh;
+    width:5vh;
     cursor: pointer;
 }
 .hambuger svg path{
@@ -91,7 +92,7 @@
     padding:0.5rem;
 }
 .load{
-    animation: load 2s;
+    animation: load 1s;
     display: flex;
     
 }
@@ -187,8 +188,9 @@
 .section-part .section-right{
     width:50%;
     display: flex;
-    align-items: center;
     justify-content: center;   
+    padding:1rem;
+    height:50vh;
 }
 .section-part .section-right p{
     font-size:1.1rem;
@@ -281,7 +283,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap:50px;
     width:80%;
-    background-color: orange;
 }
 .project{
     display:none;
@@ -335,7 +336,6 @@
     }
     #profil .section-inside .section-part .section-right{
         width:95%;
-        background-color: orange;   
     }
 
 }

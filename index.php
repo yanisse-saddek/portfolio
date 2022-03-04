@@ -1,3 +1,13 @@
+<?php
+include('admin/bd.php');
+
+if ($result = mysqli_query($conn, "SELECT * FROM portfolio")) {
+    while ($row = $result -> fetch_row()){
+        $textPresentation = $row[1];
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,7 +21,7 @@
     <link rel="icon" type="image/x-icon" href="img/icon.png">
 </head>
 
-<body>
+<body >
     <div class="main-background" id="accueil">
         <div id="particles-js">
             <div class="navbar">
@@ -54,15 +64,7 @@
                     <img src="img/icon.png" alt="">
                 </div>
                 <div class="section-right">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta ex alias error exercitationem
-                        repellendus harum nobis. Iusto quas molestias maiores similique explicabo voluptas sed id
-                        dolorum corrupti, laboriosam odio libero voluptates natus deserunt sapiente non incidunt. Alias,
-                        accusantium! Minima amet temporibus a ratione reprehenderit vel unde? Iusto reprehenderit
-                        impedit voluptatibus molestiae nulla beatae accusamus labore debitis quo quibusdam nam unde
-                        nostrum dolorum, vel non inventore, itaque expedita! Ipsam excepturi nulla quasi aut ex
-                        repudiandae dignissimos eveniet quis, adipisci ducimus, dolor provident reprehenderit maiores
-                        blanditiis tempora beatae eius quia veniam nisi ratione nihil quod quo dolore consequatur!
-                        Facilis nisi molestiae ratione.</p>
+                    <p><?php echo $textPresentation?></p>
                 </div>
             </div>
 
@@ -74,56 +76,30 @@
                 <p class="title">Compétences</p>
                 <hr class="line">
             </div>
-            <div class="show-element">
-                <div class="box-grid">
-                    <div class="box" id="1">
-                        <div class="percent">
-                            <svg>
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="number">
-                                <p class="box-value">90</p>
-                            </div>
-                        </div>
-                        <p>HTML/CSS</p>
-                    </div>
-                    <div class="box" id="2">
-                        <div class="percent">
-                            <svg>
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="number">
-                                <p class="box-value">70</p>
-                            </div>
-                        </div>
-                        <p>JavaScript</p>
-                    </div>
-                    <div class="box" id="3">
-                        <div class="percent">
-                            <svg>
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="number">
-                                <p class="box-value">65</p>
-                            </div>
-                        </div>
-                        <p>jQuery</p>
-                    </div>
-                    <div class="box" id="4">
-                        <div class="percent">
-                            <svg>
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="number">
-                                <p class="box-value">60</p>
-                            </div>
-                        </div>
-                        <p>PHP</p>
-                    </div>
+            <div class="show-box">
+                <div class="box-grid ">
+                    <?php 
+                    if ($resultCompetences = mysqli_query($conn, "SELECT * FROM competences")) {
+                        while ($rowCompetence = $resultCompetences -> fetch_row()){
+                            $id = $rowCompetence[0];
+                            $competences = $rowCompetence[1];
+                            $percent = $rowCompetence[2];
+
+                            echo "<div class='box' id=". $id .">
+                                    <div class='percent'>
+                                        <svg>
+                                            <circle cx='70' cy='70' r='70'></circle>
+                                            <circle cx='70' cy='70' r='70'></circle>
+                                        </svg>
+                                        <div class='number'>
+                                            <p class='box-value'>". $percent ."<span>%</span></p>
+                                    </div>
+                                        </div>
+                                    <p>" . $competences. "</p>
+                                </div>";
+                        }
+                    }                    
+                    ?>
                 </div>
             </div>
 
@@ -171,7 +147,7 @@
                 <hr class="line">
                 <p class="subtitle">Contactez moi sur les réseaux suivant blabla</p>
             </div>
-            <div class="icon-list show-svg">
+            <div class="icon-list">
                 <a target='_blank' href="https://linkedin.com/in/yanisse-saddek"><svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 448 512">
                         <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -197,7 +173,8 @@
                     d="M0,288L40,261.3C80,235,160,181,240,154.7C320,128,400,128,480,128C560,128,640,128,720,154.7C800,181,880,235,960,256C1040,277,1120,267,1200,224C1280,181,1360,107,1400,69.3L1440,32L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
                 </path>
             </svg>
-        </div>
+    </div>
+y
     </div>
 
 

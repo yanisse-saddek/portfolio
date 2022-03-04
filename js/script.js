@@ -50,6 +50,26 @@
         
         }).scroll();
 
+
+        var $win = $(window);
+        var $box = $('.show-box');
+        $box.css('display', "none")
+        $win.on('scroll', function () {
+            var scrollTop = $win.scrollTop();
+            $box.each(function () {
+                var $self = $(this);
+                var prev=$self.offset();
+                if ((scrollTop - prev.top) > 800) {
+                  $self.addClass('load')
+                  $self.css('display', 'flex')
+                }        
+            });
+        
+        }).scroll();
+
+
+
+
         
         var $svgList = $('.show-svg');
         $svgList.css('display', "none")
@@ -58,12 +78,12 @@
             $svgList.each(function () {
                 var $self = $(this);
                 var prev=$self.offset();
-                if ((scrollTop - prev.top) > 2400) {
+                if ((scrollTop - prev.top) > 3300) {
                   $self.addClass('load')
                   $self.css('display', 'flex')
-                  console.log(scrollTop - prev.top)
                 }
-        
+
+                
             });
         
         }).scroll();
