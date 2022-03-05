@@ -90,7 +90,7 @@
 
 
         var listOfCards = $('.box').length
-        var listOfColors = ['red', 'blue', 'green','yellow']
+        var listOfColors = ['#ED4D48', '#48ABED', '#87F30C','#EEEA0E', '#C30EEE', '#EE0E58', '#26E3D7', '#3CB167', '#774BEA']
         for(i=0; i<listOfCards; i++){
             actualBox = $('.box')[i]
             boxValue = parseInt(actualBox.innerText)

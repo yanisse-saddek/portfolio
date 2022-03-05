@@ -113,30 +113,16 @@ if ($result = mysqli_query($conn, "SELECT * FROM portfolio")) {
                 <p class="subtitle">blablabla des projets a moi meme :</p>
             </div>
             <div class="project-list">
-                <div class="project ">
-                    <img src="img/projets/rover.png">
-                    <p class="project-title">Rover</p>
-                </div>
-                <div class="project ">
-                    <img src="img/projets/rover.png">
-                    <p class="project-title">Rover</p>
-                </div>
-                <div class="project ">
-                    <img src="img/projets/rover.png">
-                    <p class="project-title">Rover</p>
-                </div>
-                <div class="project ">
-                    <img src="img/projets/rover.png">
-                    <p class="project-title">Rover</p>
-                </div>
-                <div class="project ">
-                    <img src="img/projets/rover.png">
-                    <p class="project-title">Rover</p>
-                </div>
-                <div class="project ">
-                    <img src="img/projets/rover.png">
-                    <p class="project-title">Rover</p>
-                </div>
+                <?php 
+                    if ($result = mysqli_query($conn, "SELECT * FROM projets")) {
+                        while ($row= $result -> fetch_row()){
+                            echo "<div class='project'>
+                                    <img src='img/projets/".$row[2]."'>
+                                    <a href='".$row[3]."' class='project-title'>".$row[1]."</a>
+                                </div>";
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>

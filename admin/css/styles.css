@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
 *{
-    margin:0
+    margin:0;
+    font-family: 'Nunito', sans-serif;
+
 }
 .app{
     height:100vh;
     width:100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .navbar{
     height:15vh;
@@ -106,4 +112,77 @@ textarea{
     padding:5px;
     width:100%;
     border-radius: 30px;;
+}
+
+.edit-projets{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:30%;
+}
+.project-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.project-info{
+    width:300%;
+    height:70px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background-color: white;
+    border:1px solid black;
+}
+
+.project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:70%;
+}
+
+.project-info .remove{
+    background-color: red;
+    width:20%;
+    height:100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    color:white;
+    text-decoration: none;
+    font-size:50px;
+    border-radius: 30px;
+}
+.project a{
+    text-decoration: none;
+    color:black;
+    width:60%;
+    text-align: center;
+}
+
+
+.form-log{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:40%;
+    padding:3rem;
+}
+
+.form-log input{
+    border-radius: 30px;
+    border:none;
+    margin:30px;
+    padding:10px;
+    width:60%;
+    text-align: center;
+    border:1Px solid black;
+}
+.form-log .btn{
+    width:50%;
+    background-color: black;
+    color:white;
+    font-weight: bold;
 }

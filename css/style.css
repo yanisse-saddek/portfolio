@@ -188,7 +188,8 @@
 .section-part .section-right{
     width:50%;
     display: flex;
-    justify-content: center;   
+    justify-content: center;  
+    align-items: center; 
     padding:1rem;
     height:50vh;
 }
@@ -272,6 +273,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .box .percent .number p {
     font-size:1.7rem
@@ -291,13 +293,18 @@
     flex-direction: column;
 }
 .project img{
-    height:140px;
+    height:150px;
+    width:90%;
+    background-color: orange;
 }
 .project .project-title{
     font-size: 1.2rem;
     padding:1rem;
     width:86%;
     text-align: center;
+    color:black;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .icon-list{
