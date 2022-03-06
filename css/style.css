@@ -194,7 +194,7 @@
     height:50vh;
 }
 .section-part .section-right p{
-    font-size:1.1rem;
+    font-size:1.6rem;
 }
 
 .section-inside .section-title{
@@ -380,7 +380,7 @@
         grid-template-columns: 1fr 1fr;
     }  
     .section-part .section-right p{
-        font-size:0.7rem
+        font-size:1.3rem
     }
     .icon-list svg{
         height:100px       

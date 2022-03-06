@@ -110,15 +110,17 @@ if ($result = mysqli_query($conn, "SELECT * FROM portfolio")) {
             <div class="section-title">
                 <p class="title">Portfolio</p>
                 <hr class="line">
-                <p class="subtitle">blablabla des projets a moi meme :</p>
+                <p class="subtitle">Quelques-uns de mes projets :</p>
             </div>
             <div class="project-list">
                 <?php 
                     if ($result = mysqli_query($conn, "SELECT * FROM projets")) {
                         while ($row= $result -> fetch_row()){
                             echo "<div class='project'>
-                                    <img src='img/projets/".$row[2]."'>
-                                    <a href='".$row[3]."' class='project-title'>".$row[1]."</a>
+                                    <a href='".$row[3]."'>
+                                        <img src='img/projets/".$row[2]."'>
+                                        <p class='project-title'>".$row[1]."</p>
+                                    </a>
                                 </div>";
                         }
                     }
@@ -131,7 +133,7 @@ if ($result = mysqli_query($conn, "SELECT * FROM portfolio")) {
             <div class="section-title">
                 <p class="title">Me contacter</p>
                 <hr class="line">
-                <p class="subtitle">Contactez moi sur les réseaux suivant blabla</p>
+                <p class="subtitle">Contactez moi sur les réseaux suivant:</p>
             </div>
             <div class="icon-list">
                 <a target='_blank' href="https://linkedin.com/in/yanisse-saddek"><svg xmlns="http://www.w3.org/2000/svg"
