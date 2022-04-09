@@ -110,7 +110,7 @@ if ($result = mysqli_query($conn, "SELECT * FROM portfolio")) {
                     if ($result = mysqli_query($conn, "SELECT * FROM projets")) {
                         while ($row= $result -> fetch_row()){
                             echo "<div class='project'>
-                                    <a href='".$row[3]."'>
+                                    <a target='_blank' href='".$row[3]."'>
                                         <img src='img/projets/".$row[2]."'>
                                         <p class='project-title'>".$row[1]."</p>
                                     </a>

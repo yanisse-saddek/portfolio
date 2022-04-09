@@ -68,11 +68,12 @@ if(!$_SESSION['admin']){
         header('Location: admin.php');
     }
 
-    if(isset($_FILES['img']) && isset($_POST['projet']) && isset($_POST['link'])){
+    if(isset($_FILES['img']) && isset($_POST['projet']) && isset($_POST['link']) && isset($_POST['description'])){
         $img = $_FILES['img']['name'];
         $titre = $_POST['projet'];
         $link = $_POST['link'];
-        $sql = "INSERT INTO projets (title, image, link) VALUES ('$titre', '$img', '$link')";
+        $description= $_POST['description'];
+        $sql = "INSERT INTO projets (title, image, link, description) VALUES ('$titre', '$img', '$link',  '$description')";
         mysqli_query($conn,$sql);
         
         $target_dir = "../img/projets/";
@@ -144,6 +145,7 @@ if(!$_SESSION['admin']){
                     <input type="file" name="img" >
                     <input type="text" placeholder="Nom project" name="projet">
                     <input type="text" placeholder="Lien" name="link">
+                    <textarea placeholder="description" name="description"></textarea>
                     <input type="submit" class="submit"  value="Ajouter">
                  </form>
 
