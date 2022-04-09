@@ -18,7 +18,6 @@
     }
 }
 
-
 @keyframes navload{
     from{
         margin-bottom:300px;
@@ -41,6 +40,17 @@
     to{
         margin-top: 0;
         opacity:0
+    }
+}
+
+
+
+@keyframes loadleft{
+    from{
+        margin-left:200% ;
+    }
+    to{
+        margin: 0;
     }
 }
 

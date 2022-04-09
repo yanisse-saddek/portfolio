@@ -186,3 +186,7 @@ textarea{
     color:white;
     font-weight: bold;
 }
+
+.box img{
+    height:50px
+}

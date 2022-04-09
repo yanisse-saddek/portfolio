@@ -5,7 +5,10 @@
     font-family: 'Nunito', sans-serif;
     scroll-behavior: smooth;
 }
+body{
+    overflow-x: hidden;
 
+}
 ::-webkit-scrollbar {
     width: 10px;
   }
@@ -94,7 +97,9 @@
 .load{
     animation: load 1s;
     display: flex;
-    
+}
+.loadleft{
+    animation: loadleft 30s;
 }
 
 .nav-fixed{
@@ -227,7 +232,6 @@
     width:100%;
 }
 .box{
-    position: relative;
     width:200px;
     height:250px;
     display: flex;
@@ -235,67 +239,41 @@
     justify-content: center;
     flex-direction: column;
 }
-.box .percent{
-    position: relative;
-    height:150PX;
-    width:150px;
-    padding-bottom:1rem;
+.box img{
+    height:130px;
 }
-.box .percent svg{
-    position: relative;
-    height:150PX;
-    width:150px;
+.box .box-txt{
+    font-size:1.1rem;
+    margin-top: 15px;
 }
-.box .percent svg circle{
-    height:150PX;
-    width:150px;
-    fill:none;
-    stroke-width: 10;
-    stroke:black;
-    transform:translate(5px,5px);
-    stroke-dashoffset: 440;
-    stroke-dasharray: 440;
-}
-.box .percent svg circle:nth-child(1){
-    stroke-dashoffset: 0;
-    stroke:rgb(177, 175, 175);
-}
-.box .percent svg circle:nth-child(2){
-    stroke:black;
-}
-
-.box .percent .number{
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.box .percent .number p {
-    font-size:1.7rem
-}
-
 
 .project-list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap:50px;
+    align-content: center;
+    justify-items: center ;
     width:80%;
+    grid-gap:10px;
 }
 .project{
     display:none;
+    align-items: center;
+    flex-direction: column;
+    height:500pX;
+    width:300px ;
+    overflow-wrap: break-word;
+}
+.project a{
+    text-decoration: none;
+    width:300px;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 .project img{
-    height:150px;
-    width:90%;
-    background-color: orange;
+    height:190px;
+    width:100%;
 }
 .project .project-title{
     font-size: 1.2rem;
@@ -306,6 +284,10 @@
     font-weight: bold;
     text-decoration: none;
 }
+.project .project-subtitle{
+    height:300px;
+    width:80%;
+}
 
 .icon-list{
     width:90%;
@@ -314,8 +296,18 @@
     justify-content: space-around;
     margin-bottom:250px;
 }
-.icon-list svg{
+.icon-list div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.icon-list div svg{
     height:130px
+}
+.icon-list div .mail{
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .relative{
@@ -334,6 +326,15 @@
 @media (max-width: 1024px) {
     .project-list{
         grid-template-columns: 1fr 1fr;
+    }   
+    .project{
+        height:auto;
+    } 
+    .project .project-subtitle{
+        height:auto;
+    }
+    .project img{
+        height:140px;
     }    
     .box-grid{
         grid-template-columns: 1fr 1fr 1fr;
@@ -372,9 +373,6 @@
 @media (max-width: 650px) {
     .project-list{
         grid-template-columns: 1fr;
-    }
-    .project-list .project{
-        width:100%
     }
     .box-grid{
         grid-template-columns: 1fr 1fr;

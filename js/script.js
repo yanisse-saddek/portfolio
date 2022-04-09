@@ -10,8 +10,7 @@
                  $('.navbar').addClass('nav-fixed')
                  $('.navbar img').css({height: '50px'})
                 }
-        });
-    
+        });    
 
         var $win = $(window);
         var $project = $('.project');
@@ -89,20 +88,7 @@
         }).scroll();
 
 
-        var listOfCards = $('.box').length
-        var listOfColors = ['#ED4D48', '#48ABED', '#87F30C','#EEEA0E', '#C30EEE', '#EE0E58', '#26E3D7', '#3CB167', '#774BEA']
-        for(i=0; i<listOfCards; i++){
-            actualBox = $('.box')[i]
-            boxValue = parseInt(actualBox.innerText)
-            var offsetValue  = (440 - (440 * boxValue) / 100)
-            randNum = Math.floor(Math.random() * listOfColors.length)
-            randColor = listOfColors[randNum]
-            $(`#${actualBox.id} .percent svg circle:nth-child(2)`).css({
-                strokeDashoffset: offsetValue,
-                stroke:randColor
-            })
-            listOfColors.splice(randNum, 1)
-        }
+
 
 var active = false
 $('.hamburger').click(()=>{
@@ -120,3 +106,7 @@ $('.hamburger').click(()=>{
         active = false
     }
 })
+
+
+
+    $('.particles-js-canvas-el').addClass('loadleft')

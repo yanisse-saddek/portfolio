@@ -52,17 +52,23 @@ if(!$_SESSION['admin']){
         header('Location: admin.php');
     }
 
-    if(isset($_GET['competence']) && isset($_GET['percent'])){
-        $langage = $_GET['competence'];
-        $percent = $_GET['percent'];
-        $sql = "INSERT INTO competences (langage, pourcentage) VALUES ('$langage', '$percent')";
+    if(isset($_POST['competence']) && isset($_FILES['competenceImage'])){
+        $langage = $_POST['competence'];
+        $img = $_FILES['competenceImage']['name'];
+        var_dump($img);
+        $sql = "INSERT INTO competences (langage, image) VALUES ('$langage', '$img')";
         echo $sql;
         mysqli_query($conn,$sql);
+        $target_dir = "../img/competences/";
+        $target_file = $target_dir . basename($_FILES["competenceImage"]["name"]);
+        echo $target_file;
+        if (move_uploaded_file($_FILES["competenceImage"]["tmp_name"], $target_file)) {
+          }
+
         header('Location: admin.php');
     }
 
     if(isset($_FILES['img']) && isset($_POST['projet']) && isset($_POST['link'])){
-        echo "ok";
         $img = $_FILES['img']['name'];
         $titre = $_POST['projet'];
         $link = $_POST['link'];
@@ -101,16 +107,17 @@ if(!$_SESSION['admin']){
         </div>
         <div class="panel">
             <div class="edit-presentation">
-                <p class="title" >Modifier le texte de presentation</p>
+                <h2 >Modifier le texte de presentation</h2>
                 <form class="form"  method="get" action="">
                     <textarea name="newText"><?php echo $textPresentation?></textarea> 
                     <input class="btn" type="submit" value='Modifier'>
                 </form> 
             </div>
             <div class="edit-competences">
-                <form  class="form-competences" action="" method="GET">
+            <h2 >Ajouter une compétence</h2>
+                <form  enctype="multipart/form-data" class="form-competences" action="" method="POST">
+                    <input type="file" name="competenceImage">
                     <input type="text" placeholder="Competence" name="competence">
-                    <input type="text" placeholder="Pourcentage" name="percent">
                     <input type="submit" class="submit"  value="Ajouter">
                  </form>
                 <?php 
@@ -118,13 +125,13 @@ if(!$_SESSION['admin']){
                      while ($rowCompetence = $resultCompetences -> fetch_row()){
                              $id = $rowCompetence[0];
                              $competences = $rowCompetence[1];
-                             $percent = $rowCompetence[2];
+                             $image = $rowCompetence[2];
 
                             echo "<div class='competence'  id=". $id .">
                                     <a href='admin.php?remove=".$id."'>x</a>
                                     <div class='box'>
-                                        <p>". $percent ."<span>%</span></p>
-                                        <p>" . $competences. "</p>
+                                        <img src='../img/competences/".$image."'/>
+                                        <p class='box-txt'>".$competences."</p>
                                     </div>
                                 </div>";
                             }
