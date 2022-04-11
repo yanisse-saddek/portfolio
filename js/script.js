@@ -112,4 +112,3 @@ $('.hamburger').click(() => {
 
 
 
-$('.particles-js-canvas-el').addClass('loadleft')
