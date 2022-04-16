@@ -307,9 +307,8 @@ body{
 }
 .icon-list div .mail{
     font-weight: bold;
-    text-transform: uppercase;
+    cursor:pointer;
 }
-
 .relative{
     position: relative;
 }
