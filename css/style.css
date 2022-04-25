@@ -307,8 +307,8 @@ body{
 }
 .icon-list div .mail{
     font-weight: bold;
-    cursor:pointer;
 }
+
 .relative{
     position: relative;
 }
@@ -389,4 +389,7 @@ body{
     }
     .name{font-size: 1.5rem;}
     .sub-name{font-size: 1rem;}
+    .icon-list{
+        flex-direction: column;
+    }
 }
