@@ -127,7 +127,7 @@ if ($result = mysqli_query($conn, "SELECT * FROM portfolio")) {
             <div class="section-title">
                 <p class="title">Me contacter</p>
                 <hr class="line">
-                <p class="subtitle">Contactez moi sur les réseaux suivant:</p>
+                <p class="subtitle">N'hesitez pas à me joindre</p>
             </div>
             <div class="icon-list">
                 <div>
